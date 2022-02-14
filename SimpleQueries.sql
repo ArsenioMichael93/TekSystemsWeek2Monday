@@ -36,6 +36,7 @@ ORDER BY status ASC;
  Select all fields from the payments table for payments made on or after January 1, 2005. Output should be sorted by increasing payment date.
 */
 
+USE classicmodels;
 SELECT * FROM payments
 WHERE paymentDate >= "2005-01-01"
 ORDER BY paymentDate;
@@ -46,15 +47,19 @@ ORDER BY paymentDate;
  Write a query to display all Last Name, First Name, Email and Job Title of all employees working out of the San Francisco office. Output should be sorted by last name.
  */
 
+USE classicmodels;
 SELECT lastName AS 'Last Name', firstName AS 'First Name', email AS 'Email', jobTitle AS 'Job Title' FROM employees
 WHERE officeCode = 1
 ORDER BY lastName;
+
 
 
 /*
  Write a query to display the Name, Product Line, Scale, and Vendor of all of the car products – both classic and vintage.
  The output should display all vintage cars first (sorted alphabetically by name), and all classic cars last (also sorted alphabetically by name).
 */
+
+USE classicmodels;
 SELECT `productName` AS 'Name', `productLine` AS 'Product Line', `productScale` AS 'Scale', `productVendor` AS 'Vendor' FROM products 
 WHERE `productLine` LIKE '% Cars' 
 ORDER BY `productLine` DESC, SUBSTRING(productName, 6) ASC;
