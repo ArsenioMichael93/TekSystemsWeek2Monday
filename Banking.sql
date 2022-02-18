@@ -29,7 +29,7 @@ SELECT UNIQUE title FROM employee;
 */
 
 USE Banking;
-SELECT e.LAST_NAME AS "Employee's Name", e.TITLE "Employee's Title", m.LAST_NAME AS "Boss's Name", m.TITLE AS "Boss's Name"
+SELECT e.LAST_NAME AS "Employee's Name", e.TITLE "Employee's Title", m.LAST_NAME AS "Boss's Name", m.TITLE AS "Boss's Title"
 FROM employee e
 LEFT JOIN employee m  ON m.EMP_ID = e.SUPERIOR_EMP_ID;
 
